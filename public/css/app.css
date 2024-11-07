@@ -1,3 +1,155 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+/* layouts */
+
+
+/* Header page css */
+header nav {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 3px solid #000000;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+header nav a {
+    color: black;
+    /*background-color: #000000;*/
+    text-decoration: none;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 30px;
+    /*border: 1px solid #000000;*/
+    /*border-radius: 5px;*/
+    margin: 0 10px;
+    padding: 7px;
+    transition: all 0.3s ease;
+    display: inline-block;
+
+}
+
+header nav a:active {
+    color: white;
+}
+
+header nav a:hover {
+    transform: scale(1.1);
+    color: #1c1c1c;
+}
+
+
+/* Home page css */
+
+.container  {
+    text-align: center;
+}
+
+.container h1 {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 50px;
+    letter-spacing: 2px;
+    font-weight: lighter;
+}
+
+.container p {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.container-home  {
+    text-align: center;
+}
+
+.container-home h1 {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 50px;
+    letter-spacing: 2px;
+    font-weight: lighter;
+    margin-top: 150px;
+}
+
+.container-home p {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 250px;
+}
+
+/* Footer */
+
+footer p{
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: lighter;
+
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 50px;
+}
+
+/* contact page css */
+label {
+    font-family: 'Red Hat Display', sans-serif;
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+input[type="text"],
+textarea {
+    resize: none;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 55%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    width: 20%;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+input[type="submit"]:hover {
+    background-color: #4d595e;
+}
+
+
+
+

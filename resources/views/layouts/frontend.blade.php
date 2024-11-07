@@ -6,8 +6,11 @@
     <title>@yield('title') - Marouan Portfolio</title>
 
     <!-- CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&amp;family=Red+Hat+Display:wght@900&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&amp;family=Red+Hat+Display:wght@900&amp;display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/script.js') }}">
     @stack('styles')
     <link rel="icon" href="{{ asset('icons/Mlogo.ico') }}" type="image/x-icon">
 </head>
