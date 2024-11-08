@@ -196,8 +196,6 @@ input[type="submit"]:hover {
 
 
 /* login page css */
-
-
 .home-link {
     color: #ffffff;
     font-size: 30px;
@@ -402,6 +400,10 @@ input[type="submit"]:hover {
 }
 
 /* dashboard page css */
+
+.content-title h2 {
+    text-align: center;
+}
 
 .dashboard-content {
     text-align: center;
@@ -645,4 +647,24 @@ input[type="submit"]:hover {
 /* addProjects page css */
 .mb-4 {
     text-align: center;
+}
+
+.add-button {
+    background-color: #000000;
+    color: white;
+    font-family: 'red hat display', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+}
+
+.add-button:hover {
+    background-color: #53565c;
+    color: white;
+
 }

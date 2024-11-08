@@ -56,7 +56,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        $project = Project::findOrFail($project->id);
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -64,7 +65,19 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'vak' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
+        $project = Project::findOrFail($project->id);
+        $project->name = $request->input('name');
+        $project->vak = $request->input('vak');
+        $project->description = $request->input('description');
+        $project->save();
+
+        return redirect()->route('dashboard')->with('success', 'Project updated successfully!');
     }
 
     /**
@@ -72,6 +85,10 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $projects = Project::findOrFail($project->id);
+        $projects->delete();
+
+        return redirect()->url('dashboard')->with('success', 'Project succesvol verwijderd.');
     }
+
 }

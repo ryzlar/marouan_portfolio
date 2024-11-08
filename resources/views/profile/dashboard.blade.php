@@ -5,6 +5,7 @@
 @section('content')
     <div class="container-dashboard">
         <div class="min-h-screen flex flex-col">
+            <h2 class="content-title">Welcome to your Dashboard</h2>
             <nav class="navbar">
                 <div class="navbar-content">
                     <div class="navbar-left">
@@ -27,7 +28,6 @@
             </nav>
 
             <div class="dashboard-content">
-                <h2 class="content-title">Welcome to your Dashboard</h2>
                 <h1 class="content-title">Contact Berichten</h1>
                 <table class="contact-table">
                     <thead>
@@ -36,6 +36,7 @@
                         <th>Email</th>
                         <th>Onderwerp</th>
                         <th>Bericht</th>
+                        <th>Verwijder</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -45,6 +46,7 @@
                             <td>{{ $conForm->email }}</td>
                             <td>{{ $conForm->onderwerp }}</td>
                             <td>{{ $conForm->bericht }}</td>
+                            <td><a href="{{ route('contact.destroy', $conForm->id) }}" class="btn btn-danger">Verwijder</a></td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -52,10 +54,11 @@
             </div>
         </div>
         @if(session('success'))
-            <div style="color: green; text-align: center; font-family: 'Red Hat Display', sans-serif" id="success-message">{{ session('success') }}</div>
+            <div style="color: green; text-align: center; font-family: 'Red Hat Display', sans-serif"
+                 id="success-message">{{ session('success') }}</div>
         @endif
         <script>
-            setTimeout(function() {
+            setTimeout(function () {
                 var successMessage = document.getElementById('success-message');
                 if (successMessage) {
                     successMessage.style.display = 'none';
@@ -64,24 +67,30 @@
         </script>
         <div class="container mx-auto px-4">
             <a href="{{ route('project.create') }}" class="add-button">Voeg Project Toe</a>
-            <h2 class="text-2xl font-bold mb-4">Recente Projecten</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                @foreach($projects as $project)
-                    <div class="border-b pb-4">
-                        <h3 class="font-semibold text-lg">{{ $project->name }}</h3>
-                        <p>{{ $project->description }}</p>
-                    </div>
-                @endforeach
-            </div>
             <h2 class="text-2xl font-bold mb-4">Alle Projecten</h2>
-            <h2 class="text-2xl font-bold mt-8 mb-4">Projecten</h2>
-            @foreach($projects as $project)
-                <div class="border-b pb-4">
-                    <h3 class="font-semibold text-lg">{{ $project->name }}</h3>
-                    <p>{{ $project->description }}</p>
-                </div>
-            @endforeach
-        </div>
+            <table class="table">
+                @csrf
+                <thead>
+                <tr>
+                    <th>Naam</th>
+                    <th>Vak</th>
+                    <th>Beschrijving</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($projects as $project)
+                    <tr>
+                        <td>{{ $project['name'] }}</td>
+                        <td>{{ $project['vak'] }}</td>
+                        <td>{{ $project['description'] }}</td>
+                    </tr>
+                    <tr>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 

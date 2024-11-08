@@ -1,7 +1,11 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use App\Models\Contact;
 use App\Models\Project;
+use Illuminate\Http\Request;
+
 
 class DashboardController extends Controller
 {
@@ -10,6 +14,6 @@ class DashboardController extends Controller
         $contactForms = Contact::all();
         $projects = Project::all();
 
-        return view('dashboard', compact('contactForms', 'projects'));
+        return view('profile.dashboard', compact('contactForms', 'projects'));
     }
 }
