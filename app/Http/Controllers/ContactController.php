@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -12,7 +13,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-
+        $projects = Project::all();
+        return view('profile.projects', compact('projects'));
     }
 
     /**
@@ -40,12 +42,19 @@ class ContactController extends Controller
         return redirect()->back()->with('success', 'Bericht verzonden!');
     }
 
+    public function showContactForms()
+    {
+        $contactForms = Contact::all();
+        return view('profile.dashboard', compact('contactForms'));
+    }
+
+
     /**
      * Display the specified resource.
      */
     public function show(Contact $contact)
     {
-        //
+
     }
 
     /**

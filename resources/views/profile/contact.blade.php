@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-12">
                 @if(session('success'))
-                    <div style="color: green; font-family: 'Red Hat Display', sans-serif" id="success-message">{{ session('success') }}</div>
+                    <div style="color: green; text-align: center; font-family: 'Red Hat Display', sans-serif" id="success-message">{{ session('success') }}</div>
                 @endif
                 <script>
                     setTimeout(function() {
