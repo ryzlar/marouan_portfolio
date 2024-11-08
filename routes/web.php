@@ -19,8 +19,12 @@ Route::get('/contact', function () {
     return view('profile.contact');
 });
 
+//Route::get('/login', function () {
+//    return view('auth.login');
+//});
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('profile.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
