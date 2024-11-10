@@ -36,7 +36,7 @@
                         <th>Email</th>
                         <th>Onderwerp</th>
                         <th>Bericht</th>
-                        <th>Verwijder</th>
+                        <th class="fh-center">Verwijder</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -46,7 +46,11 @@
                             <td>{{ $conForm->email }}</td>
                             <td>{{ $conForm->onderwerp }}</td>
                             <td>{{ $conForm->bericht }}</td>
-                            <td><a href="{{ route('contact.destroy', $conForm->id) }}" class="btn btn-danger">Verwijder</a></td>
+                            <td><form action="{{ route('contact.destroy', $conForm->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form></td>
                         </tr>
                     @endforeach
                     </tbody>

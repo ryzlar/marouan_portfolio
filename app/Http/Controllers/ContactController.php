@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Festival;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -76,9 +77,9 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Contact $contact)
+    public function destroy(string $id)
     {
-        $contact->delete();
-        return redirect()->back()->with('success', 'Contact verwijderd!');
+        Contact::findOrFail($id)->delete();
+        return redirect('/dashboard')->with('success', 'bericht verwijderd!');
     }
 }

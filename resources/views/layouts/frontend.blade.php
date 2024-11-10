@@ -26,9 +26,10 @@
         <a href="{{ url('/') }}">Home</a>
         <a href="{{ url('/projects') }}">Projects</a>
         <a href="{{ url('/contact') }}">Contact</a>
-        <a href="{{ url('/login') }}">Login</a>
         @auth
             <a href="/dashboard">Dashboard</a>
+        @else
+            <a href="/login">Login</a>
         @endauth
     </nav>
 </header>
@@ -36,11 +37,12 @@
 <!-- Main Content -->
 <main>
     @yield('content')
+
 </main>
 
 <!-- Footer -->
 <footer>
-    <p>&copy; {{ date('Y') }} Test Mod Site. Alle rechten voorbehouden. Ontwikkeld door Marouan el Marnissy.</p>
+    <p>&copy; {{ date('Y') }} Mijn Portfolio Site. Alle rechten voorbehouden. Ontwikkeld door Marouan el Marnissy.</p>
 </footer>
 
 <!-- JavaScript -->

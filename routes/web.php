@@ -15,14 +15,7 @@ Route::post('/projects/store', [ProjectController::class, 'store'])->name('proje
 Route::get('/projects/create', [ProjectController::class, 'create'])->name('project.create');
 Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
 Route::delete('/dashboard', [ProjectController::class, 'destroy'])->name('contact.destroy');
-
-
-
-
-
-
-
-
+Route::delete('/contact/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
 
 
 
