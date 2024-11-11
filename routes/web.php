@@ -23,7 +23,7 @@ Route::delete('/contact/{id}', [ContactController::class, 'destroy'])->name('con
 Route::delete('/projects/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
 Route::get('/projects/{id}', [ProjectController::class, 'show'])->name('project.show');
 
-
+Route::get('/api/projects', [ProjectController::class, 'api'])->name('api.projects');
 
 Route::get('/', function () {
     return view('profile.homepage');

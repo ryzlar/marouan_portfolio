@@ -90,5 +90,10 @@ class ProjectController extends Controller
         return view('profile.projects', compact('recentProjects'));
     }
 
+    public function api()
+    {
+        $projects = Project::all();
+        return $projects;
+    }
 
 }
