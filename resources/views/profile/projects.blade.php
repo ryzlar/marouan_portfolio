@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="main-container">
-        <h2 class="header-title">Recente Projecten</h2>
+        <h1 class="header-title">Recente Projecten</h1>
         <div class="recent-grid">
             @foreach($recentProjects as $project)
                 <div class="project-item">
