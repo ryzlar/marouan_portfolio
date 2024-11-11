@@ -43,7 +43,6 @@
                 </x-primary-button>
             </div>
         </form>
-        <a href="{{ url('/register') }}" class="register-link">Register</a>
     </div>
 </x-guest-layout>
     @endsection
