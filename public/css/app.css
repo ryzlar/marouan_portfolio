@@ -785,3 +785,105 @@ input[type="submit"]:hover {
     background-color: #4c4c4c;
 }
 
+/* Project Detail Page css */
+.project-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20%;
+}
+
+.project-detail-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-detail-container p
+{
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.project-detail-container p strong {
+    text-align: center;
+    color: #333;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.back-button:hover {
+    background-color: #5e5e5e;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Projects */
+
+.main-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.recent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.project-item {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.project-name {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.project-subject,
+.project-summary {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.link-details {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-details:hover {
+    text-decoration: underline;
+    color: #323232;
+}

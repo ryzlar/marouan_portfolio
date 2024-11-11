@@ -46,11 +46,13 @@
                             <td>{{ $conForm->email }}</td>
                             <td>{{ $conForm->onderwerp }}</td>
                             <td>{{ $conForm->bericht }}</td>
-                            <td><form action="{{ route('contact.destroy', $conForm->id)}}" method="POST">
+                            <td>
+                                <form action="{{ route('contact.destroy', $conForm->id)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="add-button-1">Delete</button>
-                                </form></td>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -75,7 +77,7 @@
             <div class="middle-line">
                 <span class="middle-line"></span>
             </div>
-        @if(session('addproject'))
+            @if(session('addproject'))
                 <div style="color: green; text-align: center; font-family: 'Red Hat Display', sans-serif"
                      id="success-message">{{ session('addproject') }}</div>
             @endif
@@ -87,7 +89,8 @@
                     <th>Naam</th>
                     <th>Vak</th>
                     <th>Beschrijving</th>
-                    <th >Edit</th>
+                    <th>Details</th>
+                    <th>Edit</th>
                     <th class="fh-center">Delete</th>
                 </tr>
                 </thead>
@@ -98,12 +101,15 @@
                         <td>{{ $project['name'] }}</td>
                         <td>{{ $project['vak'] }}</td>
                         <td>{{ $project['description'] }}</td>
+                        <td><a href="{{ route('project.show', $project->id) }}" class="add-button-2">Details</a></td>
                         <td><a href="{{ route('project.edit', $project->id) }}" class="add-button-2">Edit</a></td>
-                        <td><form action="{{ route('project.destroy', $project->id)}}" method="POST">
+                        <td>
+                            <form action="{{ route('project.destroy', $project->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="add-button-1">Delete</button>
-                            </form></td>
+                            </form>
+                        </td>
                     </tr>
                     <tr>
                     </tr>

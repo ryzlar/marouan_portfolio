@@ -15,7 +15,8 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        return view('profile.projects', compact('projects'));
+        $recentProjects = Project::latest()->take(3)->get();
+        return view('profile.projects', compact('projects', 'recentProjects'));
     }
 
     /**
@@ -48,9 +49,10 @@ class ProjectController extends Controller
         return view('profile.dashboard', compact('projects'));
     }
 
-    public function show(Project $project)
+    public function show(string $id)
     {
-
+        $project = Project::findOrFail($id);
+        return view('profile.showproject', compact('project'));
     }
 
     /**
@@ -81,5 +83,12 @@ class ProjectController extends Controller
         Project::findOrFail($id)->delete();
         return redirect('/dashboard')->with('addproject', 'Project verwijderd!');
     }
+
+    public function showRecentProjects()
+    {
+        $recentProjects = Project::orderBy('created_at', 'desc')->take(3)->get();
+        return view('profile.projects', compact('recentProjects'));
+    }
+
 
 }
