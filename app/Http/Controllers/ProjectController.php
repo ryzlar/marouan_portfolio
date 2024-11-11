@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
+use App\Models\Festival;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -37,7 +39,7 @@ class ProjectController extends Controller
 
         Project::create($request->only(['name', 'vak', 'description']));
 
-        return redirect()->route('dashboard')->with('success', 'Project succesvol toegevoegd.');
+        return redirect()->route('dashboard')->with('addproject', 'Project succesvol toegevoegd.');
     }
 
     public function showProjects()
@@ -54,41 +56,30 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Project $project)
+    public function edit(string $id)
     {
-        $project = Project::findOrFail($project->id);
-        return view('projects.edit', compact('project'));
+        $project = Project::findOrFail($id);
+        return view('profile.editproject', compact('project'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, string $id)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'vak' => 'required|string|max:255',
-            'description' => 'required|string',
-        ]);
-
-        $project = Project::findOrFail($project->id);
-        $project->name = $request->input('name');
-        $project->vak = $request->input('vak');
-        $project->description = $request->input('description');
+        $project = Project::findOrFail($id);
+        $project->update($request->all());
         $project->save();
-
-        return redirect()->route('dashboard')->with('success', 'Project updated successfully!');
+        return redirect('/dashboard')->with('addproject', 'Festival updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Project $project)
+    public function destroy(string $id)
     {
-        $projects = Project::findOrFail($project->id);
-        $projects->delete();
-
-        return redirect()->url('dashboard')->with('success', 'Project succesvol verwijderd.');
+        Project::findOrFail($id)->delete();
+        return redirect('/dashboard')->with('addproject', 'Project verwijderd!');
     }
 
 }

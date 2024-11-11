@@ -1,10 +1,12 @@
+@extends('layouts.frontend')
+
 @section('title', 'Login')
-<title>@yield('title') - Marouan Portfolio</title>
+
+@section('content')
 <link rel="icon" href="{{ asset('icons/Mlogo.ico') }}" type="image/x-icon">
 <x-guest-layout>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <div class="login-container">
-        <h1><a class="home-link" href="{{ url('/') }}">Home</a></h1>
         <h1 class="login-title">Login</h1>
 
         <!-- Session Status -->
@@ -44,3 +46,4 @@
         <a href="{{ url('/register') }}" class="register-link">Register</a>
     </div>
 </x-guest-layout>
+    @endsection

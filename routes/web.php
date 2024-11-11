@@ -14,9 +14,14 @@ Route::get('/contact', [ContactController::class, 'create'])->name('contact.crea
 Route::post('/projects/store', [ProjectController::class, 'store'])->name('projects.store');
 Route::get('/projects/create', [ProjectController::class, 'create'])->name('project.create');
 Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
+
+
+Route::get('/projects/{id}/edit', [ProjectController::class, 'edit'])->name('project.edit');
+Route::put('/projects/{id}', [ProjectController::class, 'update'])->name('project.update');
+
 Route::delete('/dashboard', [ProjectController::class, 'destroy'])->name('contact.destroy');
 Route::delete('/contact/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
-
+Route::delete('/projects/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
 
 
 Route::get('/', function () {

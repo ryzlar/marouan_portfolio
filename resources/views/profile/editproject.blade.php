@@ -11,15 +11,17 @@
             @endif
             <div class="field-block">
                 <label for="name" class="label-text">Projectnaam</label>
-                <input type="text" id="name" name="name" class="input-basic" required>
+                <input type="text" id="name" name="name" value="{{ $project->name }}" class="input-basic" required>
             </div>
             <div class="field-block">
                 <label for="vak" class="label-text">Vak</label>
-                <input type="text" id="vak" name="vak" class="input-basic" required>
+                <input type="text" id="vak" name="vak" value="{{ $project->vak }}" class="input-basic" required>
             </div>
             <div class="field-block">
                 <label for="description" class="label-text">Beschrijving</label>
-                <textarea id="description" name="description"  class="textarea-basic" required></textarea>
+                <textarea id="description" name="description" class="textarea-basic" required>
+                    {{ $project->description }}
+                </textarea>
             </div>
             <button type="submit" class="button-main">Voeg Toe</button>
         </form>
