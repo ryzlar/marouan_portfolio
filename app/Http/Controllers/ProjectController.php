@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
 use App\Models\Festival;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -18,6 +17,14 @@ class ProjectController extends Controller
         $recentProjects = Project::latest()->take(3)->get();
         return view('profile.projects', compact('projects', 'recentProjects'));
     }
+
+    public function homeInterface()
+    {
+        $projects = Project::all();
+        $recentProjects = Project::latest()->take(3)->get();
+        return view('profile.homepage', compact('projects', 'recentProjects'));
+    }
+
 
     /**
      * Show the form for creating a new resource.

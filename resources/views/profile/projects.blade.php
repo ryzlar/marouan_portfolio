@@ -4,17 +4,6 @@
 
 @section('content')
     <div class="main-container">
-        <h1 class="header-title">Recente Projecten</h1>
-        <div class="recent-grid">
-            @foreach($recentProjects as $project)
-                <div class="project-item">
-                    <h3 class="project-name">{{ $project->name }}</h3>
-                    <p class="project-subject">{{ $project->vak }}</p>
-                    <p class="project-summary">{{ Str::limit($project->description, 100) }}</p>
-                    <a href="{{ route('project.show', $project->id) }}" class="link-details">Details</a>
-                </div>
-            @endforeach
-        </div>
         <div class="container mx-auto px-4">
             <h1 class="content-title">Alle Projecten</h1>
             <div class="middle-line">

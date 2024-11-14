@@ -12,6 +12,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
+Route::get('/', [ProjectController::class, 'homeInterface'])->name('project.homeInterface');
 Route::post('/projects/store', [ProjectController::class, 'store'])->name('projects.store');
 Route::get('/projects/create', [ProjectController::class, 'create'])->name('project.create');
 
@@ -25,9 +26,7 @@ Route::get('/projects/{id}', [ProjectController::class, 'show'])->name('project.
 
 Route::get('/api/projects', [ProjectController::class, 'api'])->name('api.projects');
 
-Route::get('/', function () {
-    return view('profile.homepage');
-});
+
 
 Route::get('/contact', function () {
     return view('profile.contact');
